@@ -10,19 +10,20 @@ if (login === user) {
 
     alert("Bienvenida" + " " + user);
 
-} else {
-    alert("Usuario no registrado.")
-}
+    let cantidad = 0;
+    let general;
+    let premium;
 
-//Elegir que tipo de pelicula quiero ver
+    //funcion de calcular el total de las entradas
+    
+    function calcularPrecio(cantidad, precio){
 
-if (login === user) {
+        let resultado = cantidad * precio;
+        return alert("Seleccionaste" + " " + general + "entradas. El total a pagar es" + resultado);
+    }
 
-    let entrada;
-    let general = 600;
-    let premium = 1000;
-    let total;
 
+    //Elegir que pelicula ver 
 
     let option = prompt("Elegi que pelicula queres ver: \n1 - Terror. \n2 - Comedia. \n3 - Romantica \n Para salir presiona X");
 
@@ -33,22 +34,17 @@ if (login === user) {
             case "1":
                 let terror1 = prompt("Elegi que tipo de entrada queres: \na - Entrada general $600 \nb - Entrada cine Premium $1000 \nPresione S para salir");
 
-
                 while (terror1 != "S" && terror1 != "s") {
                     switch (terror1) {
                         case "a":
-                            entrada = parseInt(prompt("seleccione la cantidad de entradas"));
-                            total = entrada * general;
-
-                            alert("Seleccionaste" + " " + entrada + "Entradas. El total a pagar es$" + total)
+                            general = parseInt(prompt("seleccione la cantidad de entradas"));
+                            calcularPrecio(general, 600);
                             break;
 
                         case "b":
-                            entrada = parseInt(prompt("seleccione la cantidad de entradas"));
-                            total = entrada * premium;
-                            alert("Seleccionaste" + " " + entrada + " Entradas. El total a pagar es$" + total);
+                            premium = parseInt(prompt("seleccione la cantidad de entradas"));
+                            calcularPrecio(premium, 1000);
                             break;
-
 
                         default:
                             alert("Superaste la cantidad permitida.")
@@ -65,16 +61,13 @@ if (login === user) {
                 while (comedia2 != "S" && comedia2 != "s") {
                     switch (comedia2) {
                         case "a":
-                            entrada = parseInt(prompt("seleccione la cantidad de entradas"));
-                            total = entrada * general;
-
-                            alert("Seleccionaste" + " " + entrada + "Entradas. El total a pagar es$" + total)
+                            general = parseInt(prompt("seleccione la cantidad de entradas"));
+                            calcularPrecio(general, 600);
                             break;
 
                         case "b":
-                            entrada = parseInt(prompt("seleccione la cantidad de entradas"));
-                            total = entrada * premium;
-                            alert("Seleccionaste" + " " + entrada + " Entradas. El total a pagar es$" + total);
+                            premium = parseInt(prompt("seleccione la cantidad de entradas"));
+                            calcularPrecio(premium, 1000);
                             break;
 
                         default:
@@ -106,7 +99,10 @@ if (login === user) {
     }
 
 } else {
-    alert("opcion no valida");
+    alert("Usuario no encontrado");
 
 }
 alert("Gracias por elegir nuestro cine");
+
+
+
